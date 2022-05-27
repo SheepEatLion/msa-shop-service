@@ -1,0 +1,17 @@
+
+spring:
+  port: 8081
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    application:
+      name: shop-service
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
