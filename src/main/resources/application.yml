@@ -1,6 +1,5 @@
 
 spring:
-  port: 8081
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
