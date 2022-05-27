@@ -1,14 +1,14 @@
 package com.example.msashop.util;
 
 import com.example.msashop.domain.Shop;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class ResponseForm <T>{
 
