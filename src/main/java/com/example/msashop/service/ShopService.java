@@ -16,10 +16,12 @@ public class ShopService {
     private final ShopRepository shopRepository;
     private final FeignClient feignClient;
 
-    public ResponseForm order(String cName){
+    public ResponseForm order(String cName, String pName){
         Shop shop = Shop.builder().customerName(cName).build();
         shopRepository.save(shop);
-        return ResponseForm.success();
+        String name = pName;
+        return feignClient.buy(name);
+        //return ResponseForm.success();
     }
 
     public ResponseForm cancel(String cName){

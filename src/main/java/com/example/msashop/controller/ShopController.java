@@ -1,5 +1,6 @@
 package com.example.msashop.controller;
 
+import com.example.msashop.dto.OrderDto;
 import com.example.msashop.service.ShopService;
 import com.example.msashop.util.ResponseForm;
 import lombok.RequiredArgsConstructor;
@@ -14,9 +15,9 @@ public class ShopController {
     private final ShopService shopService;
 
     @PostMapping("/order")
-    public ResponseForm order(@RequestBody String cName){
-        log.info("order customer name: {} ", cName);
-        return shopService.order(cName);
+    public ResponseForm order(@RequestBody OrderDto orderDto){
+        log.info("order customer name: {} ", orderDto.getCName());
+        return shopService.order(orderDto.getCName(), orderDto.getPName());
     }
 
     @PutMapping("/cancel")
